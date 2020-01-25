@@ -1,0 +1,111 @@
+body,
+* {
+  font-family: "nista-rg";
+  font-style: normal;
+}
+
+// Toastify style customise
+.Toastify__toast-container {
+  width: 320px;
+}
+.Toastify__toast--default {
+  background: #fff;
+  color: #aaa;
+}
+.Toastify__toast--info {
+  background: #2185d0;
+  // background: #0984e3;
+}
+.Toastify__toast--success {
+  background: #007e7e;
+  // background: #00b894;
+}
+.Toastify__toast--warning {
+  background: #f2711c;
+  // background: #fdcb6e;
+}
+.Toastify__toast--error {
+  // background: #d63031;
+  background: #db2828;
+}
+
+.Toastify__toast-body {
+  margin-left: 15px;
+  font-family: Muli;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 18px;
+  color: #ffffff;
+}
+
+.small-notification-container {
+  border-radius: 8px !important;
+}
+
+/* The element to apply the animation to */
+.animatedMenu {
+  animation-name: example;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+  overflow: hidden;
+  opacity: 0;
+}
+
+/* For generic Modal in shared component*/
+.general-modal {
+  width: 590px !important;
+  border-radius: 4px;
+
+  .content {
+    padding: 0px !important;
+  }
+}
+
+@font-face {
+  font-family: "nista-rg";
+  src: url("/src/public/fonts/BwNistaGeo-Rg.woff") format("woff");
+}
+
+@font-face {
+  font-family: "nista-bd";
+  src: url("/src/public/fonts/BwNistaGeo-Bd.woff") format("woff");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "nista-md";
+  src: url("/src/public/fonts/BwNistaGeo-Md.woff") format("woff");
+}
+
+@font-face {
+  font-family: "nista-xbd";
+  src: url("/src/public/fonts/BwNistaGeo-xBd.woff") format("woff");
+}
+
+@font-face {
+  font-family: "nista-bk";
+  src: url("/src/public/fonts/BwNistaGeo-Bk.woff") format("woff");
+}
+
+.container {
+  width: auto;
+
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+
+  @media only screen and (min-width: 768px) {
+    width: 750px;
+  }
+
+  @media only screen and (min-width: 992px) {
+    width: 970px;
+  }
+
+  @media only screen and (min-width: 1200px) {
+    width: 1170px;
+  }
+}
