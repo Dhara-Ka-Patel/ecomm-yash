@@ -5,7 +5,7 @@ Clone repo
 yarn install
 yarn strat-dev
 
-# static display of products list
-# add and remove products from cart feature
-# checkout functionality
-# total amount to be paid
+1. static display of products list
+2. add and remove products from cart feature
+3. checkout functionality
+4. total amount to be paid
