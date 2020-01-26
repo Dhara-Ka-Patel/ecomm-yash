@@ -12,7 +12,7 @@ import { CheckoutItem } from "./CheckoutItem";
 import { withRouter } from "react-router-dom";
 
 const HeadingText = styled.div`
-  font-size: 18px;
+  font-size: 22px;
   font-weight: bold;
 
   color: #3947a6;
@@ -80,7 +80,7 @@ class CheckoutComponent extends React.Component<ILoginComponentProps> {
         <Flex
           style={{
             alignItems: "center",
-            justifyContent: "flex-start",
+            justifyContent: "space-between",
             padding: "0px 100px 30px 100px"
           }}
         >
@@ -92,6 +92,12 @@ class CheckoutComponent extends React.Component<ILoginComponentProps> {
               }}
             >
               Go back to Products
+            </Button>
+          </div>
+
+          <div>
+            <Button color="facebook" secondary={true}>
+              Proceed to payment
             </Button>
           </div>
         </Flex>
@@ -127,10 +133,13 @@ class CheckoutComponent extends React.Component<ILoginComponentProps> {
           >
             <div
               style={{
-                width: "fit-content"
+                width: "fit-content",
+                fontWeight: "bold",
+                color: "#3947a6",
+                fontSize: "18px"
               }}
             >
-              total: {this.getTotalCost(cartProducts)}
+              total: {this.getTotalCost(cartProducts)}&nbsp;$
             </div>
           </Flex>
         </Flex>

@@ -5,7 +5,7 @@ import { INotificationService } from "@ifaces/INotificationService";
 import styled from "styled-components";
 import { Box, Flex } from "@shared/GeneralComponents";
 import { products } from "@configs/ProductList";
-import { Button } from "semantic-ui-react";
+import { Button, Image } from "semantic-ui-react";
 import { inject, observer } from "mobx-react";
 
 const WrapperBox = styled(Flex)`
@@ -19,7 +19,7 @@ const WrapperBox = styled(Flex)`
 
   padding: 20px;
 
-  font-size: 14px;
+  font-size: 16px;
 `;
 
 interface IProps {
@@ -57,8 +57,35 @@ export class CheckoutItem extends React.Component<IProps, any> {
           justifyContent: "space-between"
         }}
       >
-        <div>{this.props.product.name}</div>
-        <div>({this.props.product.price}$)</div>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "flex-start"
+          }}
+        >
+          <Flex
+            style={{
+              alignItems: "center",
+              justifyContent: "center",
+              background: "#ffffff",
+              width: "70px",
+              height: "50px"
+            }}
+          >
+            <Image
+              src={this.props.product.image}
+              style={{
+                width: "100%",
+                height: "100%"
+              }}
+            />
+          </Flex>
+
+          <div style={{ paddingLeft: "20px" }}>{this.props.product.name}</div>
+        </div>
+
+        <div>{this.props.product.price}$</div>
       </WrapperBox>
     );
   }

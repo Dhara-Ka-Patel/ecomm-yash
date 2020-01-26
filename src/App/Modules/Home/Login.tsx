@@ -8,11 +8,13 @@ import styled from "styled-components";
 import { Box, Flex } from "@shared/GeneralComponents";
 import { products } from "@configs/ProductList";
 import { ListBox } from "./ListBox";
-import { Button } from "semantic-ui-react";
+import { Button, Grid } from "semantic-ui-react";
 import { withRouter } from "react-router-dom";
+import * as FeatherIcon from "react-feather";
+import { GridBox } from "./GridBox";
 
 const HeadingText = styled.div`
-  font-size: 18px;
+  font-size: 22px;
   font-weight: bold;
 
   color: #3947a6;
@@ -58,18 +60,25 @@ class LoginComponent extends React.Component<ILoginComponentProps> {
           }}
         >
           <div>
-            <div>
-              {this.props.rootStore.productStore.selectedProducts.length} Items
-              to cart
-            </div>
-
-            <Button
-              color="facebook"
-              onClick={() => {
-                this.goToCheckout();
-              }}
-            >
-              Checkout
+            <Button color="facebook" onClick={this.goToCheckout.bind(this)}>
+              <Flex
+                style={{
+                  alignItems: "center",
+                  justifyContent: "space-between"
+                }}
+              >
+                <FeatherIcon.ShoppingCart color="#ffffff" size={24} />
+                <div
+                  style={{
+                    fontWeight: "bold",
+                    fontSize: "20px",
+                    padding: "5px 5px 5px 10px"
+                  }}
+                >
+                  {this.props.rootStore.productStore.selectedProducts.length}{" "}
+                  items
+                </div>
+              </Flex>
             </Button>
           </div>
         </Flex>
@@ -80,10 +89,12 @@ class LoginComponent extends React.Component<ILoginComponentProps> {
             padding: "30px"
           }}
         >
-          <Box style={{ width: "800px" }}>
-            {products.map((product: any) => (
-              <ListBox key={product.id} product={product} />
-            ))}
+          <Box style={{ width: "1020px" }}>
+            <Grid columns={3}>
+              {products.map((product: any) => (
+                <GridBox key={product.id} product={product} />
+              ))}
+            </Grid>
           </Box>
         </Flex>
       </Box>
